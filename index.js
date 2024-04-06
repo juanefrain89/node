@@ -28,6 +28,11 @@ app.use(mysqlConexion(mysql, dbConfig, "single"));
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.send("Hola, está funcionando");
+});
+
 app.post("/login", (req, res) => {
 
 const  {correo}  = req.body;
