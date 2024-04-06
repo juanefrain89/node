@@ -7,6 +7,7 @@ const mysqlConexion = require("express-myconnection");
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const { log } = require("console");
 app.set(4200);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,12 +26,13 @@ app.use(mysqlConexion(mysql, dbConfig, "single"));
 
 
   
-
+console.log("kdkd");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send("Hola, está funcionando");
+  console.log("jdjdj");
 });
 
 app.post("/login", (req, res) => {
